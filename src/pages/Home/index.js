@@ -111,7 +111,7 @@ export default function Home({ navigation }) {
               padding: 10,
             }}>
 
-              <Image source={require('../../assets/logo2.png')} style={{ width: 50, height: 50 }} />
+              <Image source={require('../../assets/logo2.png')} style={{ resizeMode: 'contain', width: 50, height: 50 }} />
             </View>
 
 
