@@ -8,6 +8,7 @@ import SWebsite from './SWebsite';
 import SFacebook from './SFacebook';
 import SInstagram from './SInstagram';
 import SContact from './SContact';
+import SDetail from './SDetail';
 
 
 
@@ -33,5 +34,6 @@ export {
   SWebsite,
   SFacebook,
   SInstagram,
-  SContact
+  SContact,
+  SDetail
 };

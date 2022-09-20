@@ -1,11 +1,11 @@
-import { ActivityIndicator, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { MyInput } from '../../components'
 import axios from 'axios';
 import { apiURL } from '../../utils/localStorage';
 import { colors, fonts, windowWidth } from '../../utils';
 
-export default function () {
+export default function ({ navigation }) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -32,7 +32,9 @@ export default function () {
         })
     }
     return (
-        <View>
+        <View style={{
+            flex: 1,
+        }}>
             <View style={{
                 padding: 10,
             }}>
@@ -48,7 +50,9 @@ export default function () {
                     !loading &&
                     data.map((i, index) => {
                         return (
-                            <View style={{
+                            <TouchableOpacity onPress={() => {
+                                navigation.navigate('SDetail', i)
+                            }} style={{
                                 marginHorizontal: 10,
                                 marginVertical: 10,
                                 borderBottomWidth: 1,
@@ -86,7 +90,7 @@ export default function () {
                                     }}>{i.status}</Text>
 
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         )
                     })
 

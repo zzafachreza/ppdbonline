@@ -12,6 +12,7 @@ import {
   SFacebook,
   SInstagram,
   SContact,
+  SDetail,
 } from '../pages';
 import { colors } from '../utils';
 
@@ -34,6 +35,19 @@ export default function Router() {
         options={{
           headerShown: true,
           headerTitle: 'Formulir Pendaftaran',
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+          headerTintColor: '#fff',
+        }}
+      />
+
+      <Stack.Screen
+        name="SDetail"
+        component={SDetail}
+        options={{
+          headerShown: true,
+          headerTitle: 'Informasi Peserta Didik',
           headerStyle: {
             backgroundColor: colors.primary,
           },
