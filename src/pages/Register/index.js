@@ -55,11 +55,10 @@ export default function Register({ navigation }) {
         console.log(kirim);
         axios.post(apiURL + 'register.php', kirim)
             .then(res => {
-                setLoading(false)
+
                 console.warn(res.data);
                 setTimeout(() => {
-
-
+                    setLoading(false)
                     navigation.replace('SHasil', {
                         kode: res.data
                     });
